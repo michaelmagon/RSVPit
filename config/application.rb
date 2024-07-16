@@ -26,5 +26,6 @@ module Rsvpit
     config.hosts << "test.localhost.test:3000"
     # allow hosts from heroku with `.herokuapp.com`
     config.hosts << /rsvpit-[a-z0-9]+\.herokuapp\.com/
+    config.hosts << /[a-z0-9]+\.magongirasol\.xyz/
   end
 end
