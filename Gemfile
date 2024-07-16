@@ -77,3 +77,4 @@ end
 gem "shakapacker", "= 8.0"
 gem "rails_admin", "~> 3.1"
 gem "sassc-rails"
+gem 'net-pop', github: 'ruby/net-pop'
