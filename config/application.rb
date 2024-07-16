@@ -24,7 +24,6 @@ module Rsvpit
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.hosts << "test.localhost.test:3000"
-    # allow hosts from heroku with `.herokuapp.com`
-    config.hosts << /[a-z0-9]+\.herokuapp\.com/
+    config.hosts << "rsvpit-*.herokuapp.com"
   end
 end
