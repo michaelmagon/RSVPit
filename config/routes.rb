@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   resources :invite_stats, only: %i[index]
 
-  resources :guests, only: %i[show]
+  resources :guests, only: %i[show update]
 end

@@ -4,6 +4,19 @@ class Guest < ApplicationRecord
 
   before_create :set_slug
 
+  enum is_attending: {
+    undecided: 'undecided',
+    attending: 'attending',
+    not_attending: 'not_attending'
+  }
+
+  def already_answered?
+    is_attending != 'undecided'
+  end
+
+  def attending?
+    is_attending == 'attending'
+  end
 
   private
 

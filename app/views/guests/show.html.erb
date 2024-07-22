@@ -1,4 +1,75 @@
-<div class="w-full bg-white">
+<div class="w-full bg-white px-5" data-controller="guest-invitation">
   <h3 class="font-bold text-2xl text-orange-500">Hello <%= @guest.first_name.titleize%>!</h3>
-  <%= image_pack_tag 'static/images/bg.jpg', class: 'w-full' %>
+
+
+  <%= image_pack_tag 'static/images/details.svg', class: 'w-1/2' %>
+  <div class="my-14 w-3/4">
+
+  </div>
+
+
+
+  <%= image_pack_tag 'static/images/wedding-party.svg', class: 'w-1/2' %>
+  <div class="my-14 w-3/4">
+
+  </div>
+
+
+  <%= image_pack_tag 'static/images/dress-code.svg', class: 'w-1/2' %>
+  <div class="my-14 w-3/4">
+
+  </div>
+
+  <%= image_pack_tag 'static/images/rsvp2.svg', class: 'w-1/2' %>
+  <div class="my-14 w-3/4">
+    <h3 class="text-xl merriweather text-orange-900">We have reserved <%= @guest.number_of_seats %> seats for you. </h3>
+    <p class="mt-5 text-sm merriweather text-orange-900">Please let us know before 08.15.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
+  </div>
+  <div class="relative">
+    <div class="overflow-hidden rounded-lg campaign-tile-bg">
+      <%= image_pack_tag 'static/images/bg.jpg', class: 'w-full' %>
+    </div>
+    <div class="absolute w-full inset-x-0 top-0">
+      <% if @guest.already_answered? %>
+        <% if @guest.attending? %>
+          <h3 class="text-2xl font-bold text-orange-600">See you soon!</h3>
+        <% else %>
+          <p class="mt-10 text-center text-xs text-orange-900 merriweather">We're sad to know that you wont make it.</p>
+        <% end %>
+      <% else %>
+        <div id="response">
+          <div class="flex flex-row justify-center gap-5 mb-2">
+            <div class="flex flex-col items-center max-w-28 text-center merriweather text-orange-900">
+              <%= render 'maple', status: '', target: 'going' %>
+              <h3 >See you there!</h3>
+            </div>
+            <div class="flex flex-col items-center max-w-28 text-center merriweather text-orange-900">
+              <%= render 'maple', status: '', target: 'notGoing'%>
+              <h3>Sadly, can't make it. </h3>
+            </div>
+          </div>
+          <div class="w-3/4 m-auto">
+            <%= simple_form_for @guest, url: guest_path(@guest.slug), method: :patch do |f| %>
+              <%= f.input :is_attending, as: :hidden, label: "Are you attending?", input_html: { class: '', data: { target: 'guest-invitation.isAttending', action: 'change->guest-invitation#toggleInvite' } } %>          
+              <div class="hidden" data-target="guest-invitation.attending">
+                <%= f.input :seats_attending, collection: 0..@guest.number_of_seats, label: "How many are attending?", input_html: { class: 'w-1/8 rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-orange-400 sm:text-sm sm:leading-6' }, label_html: { class: 'merriweather text-orange-900 my-auto text-sm font-medium leading-6 text-gray-900'}, wrapper_html: { class: 'flex justify-between my-2'} %>
+                <%= f.input :phone_number, label: "Contact Number: ", input_html: { class: 'w-1/2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-400 sm:text-sm sm:leading-6' }, label_html: { class: 'merriweather text-orange-900 block my-auto text-sm font-medium leading-6 text-gray-900'}, wrapper_html: { class: 'flex justify-between my-2' } %>
+                <button type="submit" class="w-full inline-flex justify-center items-center gap-x-2 rounded-md bg-orange-900 text-white px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                  Send Response
+                  <span class="material-symbols-outlined">mail</span>
+                </button>
+                <p class="mt-10 text-center text-xs text-orange-900 merriweather">Your presence at our wedding is the greatest present we could ask for. If you would like to give a gift, pennies for our future wouldn't go a miss!</p>
+              </div>
+              <div class="hidden" data-target="guest-invitation.notAttending">
+                <button type="submit" class="w-full inline-flex justify-center items-center gap-x-2 rounded-md bg-orange-900 text-white px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                  Send Response
+                  <span class="material-symbols-outlined">mail</span>
+                </button>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

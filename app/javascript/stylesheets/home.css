@@ -1,3 +1,28 @@
-p {
-  background-color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+.merriweather {
+  font-family: 'Merriweather';
+}
+
+.page-titles {
+  font-family: 'Cherolina';
+}
+
+.maple-icon {
+  width: 60px;
+
+  &:hover {
+    .inner-fill {
+      fill: #f97316;
+      transition-property: fill;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 200ms;
+    }
+  }
+
+  &.active {
+    .inner-fill {
+      fill: #f97316;
+    }
+  }
 }
