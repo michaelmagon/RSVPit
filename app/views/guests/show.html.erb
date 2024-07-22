@@ -1,62 +1,122 @@
 <div class="w-full">
-  <h3 class="font-bold text-2xl text-orange-500">Hello <%= @guest.first_name.titleize%>!</h3>
-  <div class="w-full">
-    <%= image_pack_tag 'static/images/details.svg', class: 'w-1/2 px-5' %>
-    <iframe class="w-full p-5 my-5" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyCfFdSQmDnRZ9tLzSSwruacIFjhu-yECRM&origin=San+Roque+Parish+Church&destination=Jpark+Island+Resort+and+Waterpark,+Cebu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <div class="relative">
+    <div class="overflow-hidden campaign-tile-bg">
+      <%= image_pack_tag 'static/images/migs-bru-main.jpg', class: 'w-full contrast-75' %>
+    </div>
+    <div class="absolute w-full inset-x-0 top-0 p-5">
+      <h3 class="text-brown-500 font-bold text-xl merriweather mb-10 md:mb-20">Hey <%= @guest.first_name %>!</h3>
+      <div class="flex flex-col">
+        <%= image_pack_tag 'static/images/michael-mary.svg', class: 'w-1/2' %>
+        <h3 class="text-brown-500 text-lg lg:text-xl merriweather ml-10">are getting married!</h3>  
+      </div>
+    </div>
   </div>
-  <div class="w-full px-5 bg-orange-200">
+  <div class="p-5 bg-brown-50">
+    <h3 class="mt-10 text-5xl text-brown-500 font-bold merriweather text-center">09.03.2024</h3>
+    <p class="mt-5 mx-auto w-3/4 text-center merriweather font-light text-sm text-brown-800">We’re tying the knot and we’d love for you to be there!</p>
+    <p class="mb-10 mx-auto w-3/4 text-center merriweather font-light text-sm text-brown-800">Join us for our wedding on September 9, 2024. There will be laughter, dancing and drinking 🍻  – we can’t wait to share this special moment with you! </p>
+  </div>
+
+  <div class="mt-5">
+    <%= image_pack_tag 'static/images/details.svg', class: 'w-1/2 px-5' %>
+
+    <div class="flex flex-row gap-5 p-5 items-center">
+      <%= image_pack_tag 'static/images/san-roque.jpg', class: 'min-w-28 max-w-64 rounded-lg contrast-75' %>
+      <div>
+        <h3 class="text-2xl merriweather text-brown-500 mb-5">Ceremony</h3>
+        <p class="text-sm merriweather text-brown-500 underline"><a href="https://maps.app.goo.gl/f8jEppa2H7xN6YCE9" target="_blank">San Roque Parish Church</a></p>
+        <p class="text-sm merriweather text-brown-500">Hernan Cortes St, Mandaue City, Cebu</p>
+        <p class="text-sm merriweather text-brown-500">02:30 P.M.</p>
+      </div>
+    </div>
+
+    <div class="flex flex-row gap-5 p-5 items-center justify-end">
+      <div class="text-right">
+        <h3 class="text-2xl merriweather text-brown-500 mb-5">Reception</h3>
+        <p class="text-sm merriweather text-brown-500 underline"><a href="https://maps.app.goo.gl/yg58fHVmk5dpbhgb8" target="_blank">Jpark Island Resort and Waterpark, Cebu</a></p>
+        <p class="text-sm merriweather text-brown-500">Maribago, Lapu-Lapu City, Cebu</p>
+        <p class="text-sm merriweather text-brown-500">05:30 P.M.</p>
+      </div>
+      <%= image_pack_tag 'static/images/jpark.jpg', class: 'min-w-28 max-w-64 rounded-lg contrast-75' %>
+    </div>
+    <h3 class="text-center text-3xl merriweather text-brown-500">Map</h3>
+  </div>
+  <iframe class="w-full mt-5" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyCfFdSQmDnRZ9tLzSSwruacIFjhu-yECRM&origin=San+Roque+Parish+Church&destination=Jpark+Island+Resort+and+Waterpark,+Cebu&waypoints=MUDETA+BREAD+CORNER" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <div class="p-5 bg-white">
     <%= image_pack_tag 'static/images/wedding-party.svg', class: 'w-1/2' %>
     <div class="my-14 w-3/4">
-
     </div>
-
-
+  </div>
+  <div class="p-5 bg-brown-50">
     <%= image_pack_tag 'static/images/dress-code.svg', class: 'w-1/2' %>
-    <div class="my-14 w-3/4">
-
+    <p class="text-left text-xs font-light merriweather text-brown-500">Autumn arrives in a symphony of colors, each telling its own love story.</p>
+    <div class="mt-5 mb-14 flex flex-col justify-between">
+      <div>
+        <div class="flex flex-col my-5">
+          <h3 class="text-lg merriweather text-brown-500 ">Attire</h3>
+          <p class="text-sm merriweather text-brown-500">We kindly ask our guests to wearing <strong>formal attire</strong> in our color pallete for the photos.</p>
+        </div>
+      </div>
+      <div class="w-full grid grid-cols-5 gap-2">
+        <div class="my-2 h-20 bg-ivory-base rounded-lg p-2 hover:scale-110 transition-transform duration-200 ease-in-out shadow-md"><span class="text-xs text-brown-500">Ivory</span></div>
+        <div class="my-2 h-20 bg-marigold-base rounded-lg p-2 hover:scale-110 transition-transform duration-200 ease-in-out shadow-md"><span class="text-xs text-brown-500">Marigold</span></div>
+        <div class="my-2 h-20 bg-burnt_orange-base rounded-lg p-2 hover:scale-110 transition-transform duration-200 ease-in-out shadow-md"><span class="text-xs text-brown-500">Burnt Orange</span></div>
+        <div class="my-2 h-20 bg-rust-base rounded-lg p-2 hover:scale-110 transition-transform duration-200 ease-in-out shadow-md"><span class="text-xs text-brown-500">Rust</span></div>
+        <div class="my-2 h-20 bg-light_greenery-base rounded-lg p-2 hover:scale-110 transition-transform duration-200 ease-in-out shadow-md"><span class="text-xs text-brown-500">Light Greenery</span></div>
+      </div>
     </div>
   </div>
-  <div class="w-full px-5 bg-white">
+  <div class="w-full pt-4 px-5">
     <%= image_pack_tag 'static/images/rsvp2.svg', class: 'w-1/2' %>
-    <div class="my-14 w-3/4">
-      <h3 class="text-xl merriweather text-orange-900">We have reserved <%= @guest.number_of_seats %> seats for you. </h3>
-      <p class="mt-2 sm:mt-5 text-sm merriweather text-orange-900">Please let us know before 08.15.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
-    </div>
   </div>
+  <% unless @guest.already_answered? %>
+    <div id="md-rsvp-header" class="my-2 sm:my-2 w-full sm:w-3/4 px-5 sm:hidden">
+      <h3 class="text-lg sm:text-xl merriweather text-orange-900">We have reserved <%= @guest.number_of_seats %> seats for you. </h3>
+      <p class="mt-2 sm:mt-5 text-xs sm:text-sm merriweather text-orange-900">Please let us know before 08.15.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
+    </div>
+  <% end %>
   <div class="relative" data-controller="guest-invitation">
     <div class="overflow-hidden campaign-tile-bg">
       <%= image_pack_tag 'static/images/bg.jpg', class: 'w-full' %>
     </div>
-    <div class="absolute w-full inset-x-0 top-0 sm:top-14">
+    <div class="absolute w-full inset-x-0 top-0">
+      <% unless @guest.already_answered? %>
+        <div id="sm-rsvp-header" class="my-2 sm:my-2 w-full sm:w-3/4 px-5 hidden sm:block">
+          <h3 class="text-lg sm:text-xl merriweather text-orange-900">We have reserved <%= @guest.number_of_seats %> seats for you. </h3>
+          <p class="mt-2 sm:mt-5 text-xs sm:text-sm merriweather text-orange-900">Please let us know before 08.15.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
+        </div>
+      <% end %>
       <% if @guest.already_answered? %>
         <% if @guest.attending? %>
-          <h3 class="text-2xl font-bold text-orange-600">See you soon!</h3>
+          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-xs text-orange-900 merriweather">We already got your response. See you soon!</p>
         <% else %>
-          <p class="mt-4 sm:mt-10 text-center text-xs text-orange-900 merriweather">We're sad to know that you wont make it.</p>
+          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-xs text-orange-900 merriweather">We're sad to know that you wont make it.</p>
         <% end %>
       <% else %>
         <div id="response">
           <div class="flex flex-row justify-center gap-5 mb-2">
             <div class="flex flex-col items-center max-w-28 text-center merriweather text-orange-900">
               <%= render 'maple', status: '', target: 'going' %>
-              <h3 class="text-sm sm:text-base">See you there!</h3>
+              <h3 class="text-xs sm:text-base">See you there!</h3>
             </div>
             <div class="flex flex-col items-center max-w-28 text-center merriweather text-orange-900">
               <%= render 'maple', status: '', target: 'notGoing'%>
-              <h3 class="text-sm sm:text-base">Sadly, can't make it. </h3>
+              <h3 class="text-xs sm:text-base">Sadly, can't make it. </h3>
             </div>
           </div>
           <div class="w-3/4 m-auto">
             <%= simple_form_for @guest, url: guest_path(@guest.slug), method: :patch do |f| %>
               <%= f.input :is_attending, as: :hidden, label: "Are you attending?", input_html: { class: '', data: { target: 'guest-invitation.isAttending', action: 'change->guest-invitation#toggleInvite' } } %>          
               <div class="hidden" data-target="guest-invitation.attending">
-                <%= f.input :seats_attending, collection: 0..@guest.number_of_seats, label: "How many are attending?", input_html: { class: 'w-1/8 rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-orange-400 sm:text-sm sm:leading-6' }, label_html: { class: 'merriweather text-orange-900 my-auto text-sm font-medium leading-6 text-gray-900'}, wrapper_html: { class: 'flex justify-between my-2'} %>
-                <%= f.input :phone_number, label: "Contact Number: ", input_html: { class: 'w-1/2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-400 sm:text-sm sm:leading-6' }, label_html: { class: 'merriweather text-orange-900 block my-auto text-sm font-medium leading-6 text-gray-900'}, wrapper_html: { class: 'flex justify-between my-2' } %>
+                <%= f.input :seats_attending, collection: 0..@guest.number_of_seats, label: "How many are attending?", input_html: { class: 'w-1/8 rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-orange-400 sm:text-sm sm:leading-6' }, label_html: { class: 'merriweather text-orange-900 my-auto text-xs sm:text-sm font-medium leading-6 text-gray-900'}, wrapper_html: { class: 'flex justify-between my-2'} %>
+                <%= f.input :phone_number, label: "Contact Number: ", input_html: { class: 'w-1/2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-400 sm:text-sm sm:leading-6' }, label_html: { class: 'merriweather text-orange-900 block my-auto text-xs sm:text-sm font-medium leading-6 text-gray-900'}, wrapper_html: { class: 'flex justify-between my-2' } %>
                 <button type="submit" class="w-full inline-flex justify-center items-center gap-x-2 rounded-md bg-orange-900 text-white px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
                   Send Response
                   <span class="material-symbols-outlined">mail</span>
                 </button>
-                <p class="mt-5 sm:mt-10 text-center text-xs text-orange-900 merriweather">Your presence at our wedding is the greatest present we could ask for. If you would like to give a gift, pennies for our future wouldn't go a miss!</p>
+                <p class="mt-5 sm:mt-10 md:mt-2 text-center text-xs text-orange-900 merriweather">Your presence at our wedding is the greatest present we could ask for. If you would like to give a gift, pennies for our future wouldn't go amiss!</p>
               </div>
               <div class="hidden" data-target="guest-invitation.notAttending">
                 <button type="submit" class="w-full inline-flex justify-center items-center gap-x-2 rounded-md bg-orange-900 text-white px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
