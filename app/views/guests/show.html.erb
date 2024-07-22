@@ -1,32 +1,34 @@
-<div class="w-full bg-white px-5" data-controller="guest-invitation">
-  <h3 class="font-bold text-2xl text-orange-500">Hello <%= @guest.first_name.titleize%>!</h3>
+<div class="w-full bg-white">
+  <div class="w-full px-5" data-controller="guest-invitation">
+    <h3 class="font-bold text-2xl text-orange-500">Hello <%= @guest.first_name.titleize%>!</h3>
 
 
-  <%= image_pack_tag 'static/images/details.svg', class: 'w-1/2' %>
-  <div class="my-14 w-3/4">
+    <%= image_pack_tag 'static/images/details.svg', class: 'w-1/2' %>
+    <div class="my-14 w-3/4">
 
-  </div>
-
-
-
-  <%= image_pack_tag 'static/images/wedding-party.svg', class: 'w-1/2' %>
-  <div class="my-14 w-3/4">
-
-  </div>
+    </div>
 
 
-  <%= image_pack_tag 'static/images/dress-code.svg', class: 'w-1/2' %>
-  <div class="my-14 w-3/4">
 
-  </div>
+    <%= image_pack_tag 'static/images/wedding-party.svg', class: 'w-1/2' %>
+    <div class="my-14 w-3/4">
 
-  <%= image_pack_tag 'static/images/rsvp2.svg', class: 'w-1/2' %>
-  <div class="my-14 w-3/4">
-    <h3 class="text-xl merriweather text-orange-900">We have reserved <%= @guest.number_of_seats %> seats for you. </h3>
-    <p class="mt-5 text-sm merriweather text-orange-900">Please let us know before 08.15.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
+    </div>
+
+
+    <%= image_pack_tag 'static/images/dress-code.svg', class: 'w-1/2' %>
+    <div class="my-14 w-3/4">
+
+    </div>
+
+    <%= image_pack_tag 'static/images/rsvp2.svg', class: 'w-1/2' %>
+    <div class="my-14 w-3/4">
+      <h3 class="text-xl merriweather text-orange-900">We have reserved <%= @guest.number_of_seats %> seats for you. </h3>
+      <p class="mt-5 text-sm merriweather text-orange-900">Please let us know before 08.15.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
+    </div>
   </div>
   <div class="relative">
-    <div class="overflow-hidden rounded-lg campaign-tile-bg">
+    <div class="overflow-hidden campaign-tile-bg">
       <%= image_pack_tag 'static/images/bg.jpg', class: 'w-full' %>
     </div>
     <div class="absolute w-full inset-x-0 top-0">
