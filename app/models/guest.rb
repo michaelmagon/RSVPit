@@ -11,7 +11,7 @@ class Guest < ApplicationRecord
   }
 
   def already_answered?
-    is_attending != 'undecided'
+    is_attending == 'attending' || is_attending == 'not_attending'
   end
 
   def attending?
