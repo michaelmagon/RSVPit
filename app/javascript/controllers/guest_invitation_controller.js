@@ -9,9 +9,11 @@ export default class extends Controller {
                     "notGoing"
                   ]
   connect() {
+    console.log("connected")
   }
 
   handleAction(event) {
+    console.log('test')
     const decision = event.currentTarget.dataset.decision;
     this.clearActiveStatus();
     this.resetFormStatus();
