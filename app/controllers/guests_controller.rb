@@ -7,10 +7,18 @@ class GuestsController < ApplicationController
 
   def update
     @guest = Guest.find_by(slug: params[:id])
-    @guest.update(guest_params)
+    @guest_update = GuestUpdate.new(guest_params.merge(guest: @guest))
 
-    respond_to do |format|
-      format.turbo_stream
+    if @guest_update.save
+      respond_to do |format|
+        format.turbo_stream
+      end
+    else
+      respond_to do |format|
+        format.turbo_stream do
+          render :create, status: :unprocessable_entity
+        end
+      end
     end
 
   end
@@ -18,6 +26,6 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:seats_attending, :is_attending)
+    params.require(:guest).permit(:seats_attending, :is_attending, :phone_number)
   end
 end
