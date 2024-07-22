@@ -27,7 +27,7 @@
     <div class="overflow-hidden campaign-tile-bg">
       <%= image_pack_tag 'static/images/bg.jpg', class: 'w-full' %>
     </div>
-    <div class="absolute w-full inset-x-0 top-0">
+    <div class="absolute w-full inset-x-0 top-0 sm:top-14">
       <% if @guest.already_answered? %>
         <% if @guest.attending? %>
           <h3 class="text-2xl font-bold text-orange-600">See you soon!</h3>
