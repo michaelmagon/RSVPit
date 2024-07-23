@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        xxs: '0.5rem',
+      },
       colors: {
         ivory: {
           'base': '#fefae5'

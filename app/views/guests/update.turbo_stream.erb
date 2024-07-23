@@ -1,9 +1,9 @@
 <%= turbo_stream.replace 'response' do %>
   <div class='p-5'>
     <% if @guest.attending? %>
-      <p class="mt-10 text-center text-xs text-orange-900 merriweather">Great! We can't wait to see you!</p>
+      <p class="mt-10 text-center text-lg text-orange-900 merriweather">Great! We can't wait to see you!</p>
     <% else %>
-      <p class="mt-10 text-center text-xs text-orange-900 merriweather">We're sad to know that you wont make it.</p>
+      <p class="mt-10 text-center text-lg text-orange-900 merriweather">We're sad to know that you wont make it.</p>
     <% end %>
   </div>
 <% end %>
