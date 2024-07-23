@@ -29,6 +29,7 @@
     "shakapacker": "8.0.0",
     "stimulus": "^3.2.2",
     "style-loader": "^4.0.0",
+    "swiper": "^11.1.5",
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.92.1",
     "webpack-assets-manifest": "^5.2.1",

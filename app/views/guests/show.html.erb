@@ -45,9 +45,46 @@
 
   <div class="p-5 bg-white">
     <%= image_pack_tag 'static/images/wedding-party.svg', class: 'w-1/2' %>
-    <div class="my-14 w-3/4">
+  </div>
+  <div class="bg-white">
+    <div class="my-10">
+      <div class="mb-5">
+        <h3 class="font-bold text-4xl text-center mb-3 merriweather">Groomsmen</h3>
+        <p class="text-sm text-gray-600 text-center merriweather">The few, the proud, the hungover.</p>
+      </div>
+      <div class="relative" data-controller="swiper" >
+        <div data-swiper-target="next" class="swiper-prev absolute left-0 h-11 w-11 top-1/3 z-30">
+        </div>
+        <div data-swiper-target="prev" class="swiper-next absolute right-0 h-11 w-11 top-1/3 z-30">
+        </div>
+        <div class="swiper-container relative overflow-hidden" data-swiper-target="container">
+          <div class="swiper-wrapper">
+            <%= render 'groomsmen' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-10">
+      <div class="mb-5">
+        <h3 class="font-bold text-4xl text-center mb-3 merriweather">Bridesquad</h3>
+        <p class="text-sm text-gray-600 text-center merriweather">Behind every stressed-out bride is a team of bridesmaids hiding the wine.</p>
+      </div>
+      <div class="relative" data-controller="swiper" >
+        <div data-swiper-target="next" class="swiper-prev absolute left-0 h-11 w-11 top-1/3 z-30">
+        </div>
+        <div data-swiper-target="prev" class="swiper-next absolute right-0 h-11 w-11 top-1/3 z-30">
+        </div>
+        <div class="swiper-container relative overflow-hidden" data-swiper-target="container">
+          <div class="swiper-wrapper">
+            <%= render 'bridesmaid' %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+
   <div class="p-5 bg-brown-50">
     <%= image_pack_tag 'static/images/dress-code.svg', class: 'w-1/2' %>
     <p class="text-left text-xs font-light merriweather text-brown-500">Autumn arrives in a symphony of colors, each telling its own love story.</p>
