@@ -18,6 +18,10 @@ class Guest < ApplicationRecord
     is_attending == 'attending'
   end
 
+  def not_attending?
+    is_attending == 'not_attending'
+  end
+
   private
 
   def set_slug
