@@ -130,7 +130,7 @@
       <% end %>
       <% if @guest.already_answered? %>
         <% if @guest.attending? %>
-          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-lg text-orange-900 merriweather">We already got your response. See you soon!</p>
+          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-lg text-orange-900 merriweather">We already got your response and reserved <%= pluralize(@guest.number_of_seats, 'seat') %> for you. See you soon!</p>
         <% else %>
           <p class="mt-5 sm:mt-10 md:mt-2 text-center text-lg text-orange-900 merriweather">We're sad to know that you wont make it.</p>
         <% end %>

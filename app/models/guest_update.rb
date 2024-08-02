@@ -15,11 +15,14 @@ class GuestUpdate
   def save
     return false unless valid?
 
-    guest.update(seats_attending: seats_attending, is_attending: is_attending, phone_number: phone_number)
+    guest.update(seats_attending: updated_seats_attending, is_attending: is_attending, phone_number: phone_number)
   end
 
-
   private
+
+  def updated_seats_attending
+    is_attending == 'attending' ? seats_attending : 0
+  end
 
   def seats_attending_cannot_be_greater_than_number_of_seats
     if seats_attending.to_i > guest.number_of_seats.to_i
