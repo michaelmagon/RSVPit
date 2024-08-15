@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  resources :invite_stats, only: %i[index]
+  resources :invite_stats, only: %i[index create]
 
   resources :guests, only: %i[show update]
 end

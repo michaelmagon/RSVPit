@@ -1,5 +1,5 @@
 
-<div class="flex flex-col">
+<div class="flex flex-col p-5">
   <div>
     <span class="font-bold text-lg text-orange-500">Total Number of Seats Invited: <span class="font-bolder text-2xl text-orange-600"><%= @total_seats_invited %></span></span>
   </div>
@@ -7,4 +7,17 @@
   <div>
     <span class="font-bold text-lg text-orange-500">Total Number of Seats Attending: <span class="font-bolder text-2xl text-orange-600"><%= @total_seats_attending %></span></span>
   </div>
+
+  <div>
+    <span class="font-bold text-lg text-orange-500">Total Number of Seats Not Attending: <span class="font-bolder text-2xl text-orange-600"><%= @total_seats_not_attending %></span></span>
+  </div>
+
+  <div class="border border-t border-orange-500 pt-2 flex flex-col">
+    <span class="font-bold text-lg text-orange-500">Total Unanswered Invitations: <span class="font-bolder text-2xl text-orange-600"><%= @total_unasnwered_invitations || '0' %></span></span>
+    <span class="font-bold text-lg text-orange-500">Total Unanswered Invitations Locked: <span class="font-bolder text-2xl text-orange-600"><%= @total_unasnwered_invitations_locked %></span></span>
+    <span class="font-bold text-lg text-orange-500">Total Unanswered Invitations Unlocked: <span class="font-bolder text-2xl text-orange-600"><%= @total_unasnwered_invitations_unlocked %></span></span>
+  </div>
+
+  <%= button_to "Lock RSVPs", invite_stats_path(state: 'lock'), method: :post, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5" %>
+  <%= button_to "Unlock RSVPs", invite_stats_path(state: 'unlock'), method: :post, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5" %>
 </div>

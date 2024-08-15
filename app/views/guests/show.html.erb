@@ -11,7 +11,7 @@
       </div>
     </div>
   </div>
-  <% unless @guest.not_attending? %>
+  <% if @guest.attending? || (@guest.undecided? && !@guest.locked)  %>
     <div class="p-5 bg-brown-50">
       <h3 class="mt-10 text-5xl text-brown-500 font-bold merriweather text-center">09.03.2024</h3>
       <p class="mt-5 mx-auto w-3/4 text-center merriweather font-light text-sm text-brown-800">We’re tying the knot and we’d love for you to be there!</p>
@@ -122,7 +122,7 @@
       <%= image_pack_tag 'static/images/bg.jpg', class: 'w-full' %>
     </div>
     <div class="absolute w-full inset-x-0 top-0">
-      <% unless @guest.already_answered? %>
+      <% if @guest.undecided? && !@guest.locked%>
         <div id="sm-rsvp-header" class="my-2 sm:my-2 w-full sm:w-3/4 px-5 hidden sm:block">
           <h3 class="text-lg sm:text-xl merriweather text-orange-900">We have reserved <%= pluralize(@guest.number_of_seats, 'seat') %> for you. </h3>
           <p class="mt-2 sm:mt-5 text-xs sm:text-sm merriweather text-orange-900">Please let us know before 08.15.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
@@ -130,10 +130,12 @@
       <% end %>
       <% if @guest.already_answered? %>
         <% if @guest.attending? %>
-          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-lg text-orange-900 merriweather">We already got your response and reserved <%= pluralize(@guest.number_of_seats, 'seat') %> for you. See you soon!</p>
+          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-lg text-orange-900 merriweather px-5">We already got your response and reserved <%= pluralize(@guest.number_of_seats, 'seat') %> for you. See you soon!</p>
         <% else %>
-          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-lg text-orange-900 merriweather">We're sad to know that you wont make it.</p>
+          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-lg text-orange-900 merriweather px-5">We're sad to know that you wont make it.</p>
         <% end %>
+      <% elsif @guest.locked? %>
+          <p class="mt-5 sm:mt-10 md:mt-2 text-center text-lg text-orange-900 merriweather px-5">Sorry! The RSVP deadline was August 15. If you'd still like to respond, please contact Michael or Mary.</p>
       <% else %>
         <div id="response">
           <div class="flex flex-row justify-center gap-5 mb-2">
