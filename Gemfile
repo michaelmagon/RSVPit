@@ -82,3 +82,5 @@ gem 'net-pop', github: 'ruby/net-pop'
 gem "simple_form", "~> 5.3"
 
 gem "dotenv-rails", "~> 3.1"
+
+gem "cancancan", "~> 3.6"

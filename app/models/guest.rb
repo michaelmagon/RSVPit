@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Guest < ApplicationRecord
-
+  belongs_to :event, optional: true
   before_create :set_slug
 
   enum is_attending: {
@@ -20,6 +20,10 @@ class Guest < ApplicationRecord
 
   def not_attending?
     is_attending == 'not_attending'
+  end
+
+  def name
+    "#{first_name} #{last_name}"
   end
 
   private
