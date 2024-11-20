@@ -28,5 +28,7 @@ module Rsvpit
     config.hosts << /rsvpit-[a-z0-9]+\.herokuapp\.com/
     config.hosts << /[a-z0-9]+\.magongirasol\.xyz/
     config.hosts << /magongirasol\.xyz/
+    config.hosts << /rsvpit\.com/
+    config.hosts << /ronnie-and-niña\.xyz/
   end
 end
