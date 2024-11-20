@@ -1,0 +1,12 @@
+<%= turbo_stream.replace 'response' do %>
+  <div class='p-5'>
+    <% if @guest.attending? %>
+      <p class="mt-10 text-center text-lg text-green-dark merriweather">Great! We reserved <%= pluralize(@guest.number_of_seats, 'seat') %> for you. See you soon!</p>
+    <% else %>
+      <p class="mt-10 text-center text-lg text-green-dark merriweather">We're sad to know that you wont make it.</p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= turbo_stream.remove 'md-rsvp-header' %>
+<%= turbo_stream.remove 'sm-rsvp-header' %>

@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+  font-family: 'Minion Condensed';
+  font-weight: 400;
+  src: url('/public/fonts/MinionCondensed.otf') format("opentype");
+}

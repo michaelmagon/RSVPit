@@ -28,6 +28,19 @@ module.exports = {
         light_greenery: {
           'base': '#cadebc'
         },
+        green: {
+          'light': '#5a624f',
+          'dark': '#425333',
+          'emerald': '#182604',
+          'kelly': '#386000',
+          'teal': '#13604b',
+          'sage': '#759268',
+          '10': '#f2f3f0',
+          '25': '#e0e3dc',
+          '50': '#d2d4cf',
+          '75': '#94ab9b',
+          '100': '#707d69'
+        },
         brown: {
           'base': '#a95b26',
           '50': '#efebe9',
@@ -44,6 +57,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        'gistesy': ['Gistesy', 'sans-serif'],
+        'bellarosa': ['Andrea Bellarosa', 'sans-serif'],
+        'minion-condensed': ["Minion Condensed", 'sans-serif'],
       },
       contrast: {
         25: '.25',

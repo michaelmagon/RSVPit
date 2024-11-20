@@ -2,12 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+@layer base {
+  @font-face {
+    font-family: 'Gistesy';
+    font-weight: 400;
+    src: url('/fonts/Gistesy.ttf') format("truetype");
+  }
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  @font-face {
+    font-family: 'Andrea Bellarosa';
+    font-weight: 700;
+    src: url('/fonts/Bellarosa.ttf') format("truetype");
+  }
+
+  @font-face {
+    font-family: "Minion Condensed";
+    font-weight: 400;
+    src: url('/fonts/MinionCondensed.otf') format("opentype");
   }
 }
-
-*/

@@ -65,3 +65,25 @@
     }
   }
 }
+
+.ronnie-nins-checkbox {
+  width: 60px;
+  .inner-fill {
+    fill: transparent;
+  }
+
+  &:hover {
+    .inner-fill {
+      fill: #769269;
+      transition-property: fill;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 200ms;
+    }
+  }
+
+  &.active {
+    .inner-fill {
+      fill: #769269;
+    }
+  }
+}
