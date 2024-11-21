@@ -64,7 +64,6 @@ RailsAdmin.config do |config|
     edit do
       field :first_name
       field :last_name
-      field :name
       field :email
       field :phone_number
       field :number_of_seats
