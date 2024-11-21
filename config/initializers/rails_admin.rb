@@ -41,8 +41,57 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.model 'Event' do
+  config.model 'Guest' do
+    list do
+      field :name
+      field :show_in_app do
+        pretty_value do
+          link = "#{bindings[:object].event.host}/guests/#{bindings[:object].slug}"
+          bindings[:view].button_to('Copy Link', '#', type: 'button', onclick: "navigator.clipboard.writeText('#{link}'); return false;")
+        end
+        formatted_value do
+          link = "#{bindings[:object].event.host}/guests/#{bindings[:object].slug}"
+          bindings[:view].button_to('Copy Link', '#', type: 'button', onclick: "navigator.clipboard.writeText('#{link}'); return false;")
+        end
+      end
+      field :email
+      field :slug
+      field :is_attending
+      field :number_of_seats
+      field :seats_attending
+      field :event
+    end
+    edit do
+      field :first_name
+      field :last_name
+      field :name
+      field :email
+      field :phone_number
+      field :number_of_seats
+      field :is_attending
+      field :event
+    end
+    show do
+      field :name
+      field :email
+      field :slug
+      field :is_attending
+      field :number_of_seats
+      field :seats_attending
+      field :event
+      field :show_in_app do
+        pretty_value do
+          bindings[:view].link_to('Show in App', "/guests/#{(bindings[:object].slug)}")
+        end
+        formatted_value do
+          bindings[:view].link_to('Show in App', "/guests/#{(bindings[:object].slug)}")
+        end
+      end
+    end
 
+  end
+
+  config.model 'Event' do
     list do
       field :name
       field :happening_on
@@ -74,6 +123,8 @@ RailsAdmin.config do |config|
     edit do
       field :name
       field :happening_on
+      field :host
+      field :site_title
       field :guests
     end
     show do

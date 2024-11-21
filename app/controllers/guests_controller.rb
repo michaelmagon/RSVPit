@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class GuestsController < ApplicationController
+  before_action :set_guest, only: %i[show]
   def show
-    @guest = Guest.find_by(slug: params[:id])
   end
 
   def update
@@ -30,6 +30,10 @@ class GuestsController < ApplicationController
   end
 
   private
+
+  def set_guest
+    @guest = Guest.find_by(slug: params[:id])
+  end
 
   def guest_params
     params.require(:guest).permit(:seats_attending, :is_attending, :phone_number)

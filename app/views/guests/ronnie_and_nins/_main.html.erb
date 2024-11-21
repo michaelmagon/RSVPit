@@ -29,7 +29,7 @@
   </div>
   <div class="pt-16 bg-green-25">
     <div class="w-3/4 mx-auto mb-10">
-      <h3 class="text-4xl sm:text-7xl text-center text-green-dark font-minion-condensed font-light">DETAILS</h3>
+      <h3 class="text-4xl sm:text-7xl text-center text-green-dark merriweather font-light">DETAILS</h3>
     </div>
     <div class="flex justify-center mb-10">
       <span class="border-r border-green-100 h-8">&nbsp;</span>
@@ -62,7 +62,7 @@
   <iframe class="w-full" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyCfFdSQmDnRZ9tLzSSwruacIFjhu-yECRM&origin=place_id:ChIJ6TRaEUWZqTMRlloIrB56UHM&destination=place_id:ChIJJSDyO0WZqTMRXaEQquMpzFk" width="600" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   <div class="py-16 px-8 bg-green-10">
     <div class="w-3/4 mx-auto mb-10">
-      <h3 class="text-4xl sm:text-6xl text-center text-green-dark font-minion-condensed font-light">DRESS CODE</h3>
+      <h3 class="text-4xl sm:text-6xl text-center text-green-dark merriweather font-light">DRESS CODE</h3>
     </div>
     <div class="mt-5 mb-14 flex flex-col justify-between">
       <div>
@@ -78,6 +78,23 @@
       </div>
     </div>
   </div>
+  <div class="py-16 px-8 bg-green-25">
+    <div class="w-3/4 mx-auto mb-10">
+      <h3 class="text-4xl sm:text-6xl text-center text-green-dark merriweather font-light">GIFT REGISTRY</h3>
+    </div>
+    <div class="mt-5 mb-14 flex flex-col justify-between">
+      <div>
+        <div class="flex flex-col mb-5 text-center">
+          <p class="text-sm merriweather text-green-100">The best gift we could ask for is your company on our special day. However should you wish help us celebrate with a gift, we would be grateful for a contribution towards our future together.</p>
+          <div class="flex flex-col sm:flex-row justify-center items-center">
+            <%= image_pack_tag 'static/images/ronnie-nins-qr.jpg', class: 'w-1/2 sm:w-1/4 mt-8 mr-0 sm:mr-2' %>
+            <%= image_pack_tag 'static/images/ronnie-nins-chinabank.png', class: 'w-1/2 sm:w-1/4 mt-8 ml-0 sm:ml-2' %>
+          </div>
+          <p class="text-xs merriweather text-green-100 mt-4">Please do add a note so we know who to thank.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="relative" data-controller="guest-invitation">
     <div class="overflow-hidden">
@@ -85,7 +102,7 @@
     </div>
     <div class="absolute w-full inset-x-0 top-0">
       <div class="w-3/4 mx-auto my-10">
-        <h3 class="text-4xl sm:text-6xl text-center text-green-dark font-minion-condensed font-light">RSVP</h3>
+        <h3 class="text-4xl sm:text-6xl text-center text-green-dark merriweather font-light">RSVP</h3>
       </div>
       <% unless @guest.already_answered? %>
         <div id="md-rsvp-header" class="my-2 sm:my-2 w-full sm:w-3/4 px-5 sm:hidden text-center">
@@ -131,7 +148,7 @@
                 <p class="mt-5 sm:mt-10 md:mt-2 text-center text-xs text-green-dark merriweather">Your presence at our wedding is the greatest present we could ask for. If you would like to give a gift, pennies for our future wouldn't go amiss!</p>
               </div>
               <div class="hidden" data-target="guest-invitation.notAttending">
-                <button type="submit" class="w-full inline-flex justify-center items-center gap-x-2 rounded-md bg-green-dark text-white px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                <button type="submit" class="w-full inline-flex justify-center items-center gap-x-2 rounded-md bg-green-dark text-white px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-green-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
                   Send Response
                   <span class="material-symbols-outlined">mail</span>
                 </button>
