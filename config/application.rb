@@ -32,5 +32,6 @@ module Rsvpit
     config.hosts << /[a-z0-9]+\.ronnie-and-niña\.xyz/
     config.hosts << /ronnie-and-niña\.xyz/
     config.hosts << /xn--ronnie-and-nia-2nb\.xyz/
+    config.hosts << /[a-z0-9]+\.xn--ronnie-and-nia-2nb\.xyz/
   end
 end
