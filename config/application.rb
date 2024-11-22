@@ -23,15 +23,16 @@ module Rsvpit
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.hosts << "test.localhost.test:3000"
-    # allow hosts from heroku with `.herokuapp.com`
-    config.hosts << /rsvpit-[a-z0-9]+\.herokuapp\.com/
-    config.hosts << /[a-z0-9]+\.magongirasol\.xyz/
-    config.hosts << /magongirasol\.xyz/
-    config.hosts << /rsvpit\.com/
-    config.hosts << /[a-z0-9]+\.ronnie-and-niña\.xyz/
-    config.hosts << /ronnie-and-niña\.xyz/
-    config.hosts << /xn--ronnie-and-nia-2nb\.xyz/
-    config.hosts << /[a-z0-9]+\.xn--ronnie-and-nia-2nb\.xyz/
+    # config.hosts << "test.localhost.test:3000"
+    # # allow hosts from heroku with `.herokuapp.com`
+    # config.hosts << /rsvpit-[a-z0-9]+\.herokuapp\.com/
+    # config.hosts << /[a-z0-9]+\.magongirasol\.xyz/
+    # config.hosts << /magongirasol\.xyz/
+    # config.hosts << /rsvpit\.com/
+    # config.hosts << /[a-z0-9]+\.ronnie-and-niña\.xyz/
+    # config.hosts << /ronnie-and-niña\.xyz/
+    # config.hosts << /xn--ronnie-and-nia-2nb\.xyz/
+    # config.hosts << /[a-z0-9]+\.xn--ronnie-and-nia-2nb\.xyz/
+    config.hosts.clear
   end
 end
