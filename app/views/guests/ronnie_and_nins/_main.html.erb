@@ -107,7 +107,7 @@
       <% unless @guest.already_answered? %>
         <div id="md-rsvp-header" class="my-2 sm:my-2 w-full sm:w-3/4 px-5 sm:hidden text-center">
           <h3 class="text-lg sm:text-xl merriweather text-green-dark">We have reserved <%= pluralize(@guest.number_of_seats, 'seat') %> for you. </h3>
-          <p class="mt-2 sm:mt-5 text-xs sm:text-sm merriweather text-green-dark">Please let us know before 08.15.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
+          <p class="mt-2 sm:mt-5 text-xs sm:text-sm merriweather text-green-dark">Please let us know before 12.01.2024 if you're attending or not so we can reserve enough seats for everyone.</p>
         </div>
       <% end %>
       <% if @guest.undecided? && !@guest.locked %>
