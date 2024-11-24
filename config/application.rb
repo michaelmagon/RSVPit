@@ -34,6 +34,5 @@ module Rsvpit
     # config.hosts << /xn--ronnie-and-nia-2nb\.xyz/
     # config.hosts << /[a-z0-9]+\.xn--ronnie-and-nia-2nb\.xyz/
     config.hosts.clear
-    config.hosts << "localhost:3000"
   end
 end
