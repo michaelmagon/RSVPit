@@ -46,7 +46,7 @@ RailsAdmin.config do |config|
       field :name
       field :show_in_app do
         pretty_value do
-          link = "#{bindings[:object].event.host}/guests/#{bindings[:object].slug}"
+          link = "#{bindings[:object]&.event&.host}/guests/#{bindings[:object].slug}"
           bindings[:view].button_to('Copy Link', '#', type: 'button', onclick: "navigator.clipboard.writeText('#{link}'); return false;")
         end
         formatted_value do
