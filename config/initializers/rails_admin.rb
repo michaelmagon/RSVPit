@@ -60,6 +60,8 @@ RailsAdmin.config do |config|
       field :number_of_seats
       field :seats_attending
       field :event
+      field :first_name
+      field :last_name
     end
     edit do
       field :first_name
@@ -102,13 +104,13 @@ RailsAdmin.config do |config|
 
       field "Total Attending" do
         pretty_value do
-          bindings[:object].guests.where(is_attending: 'attending').count
+          bindings[:object].guests.where(is_attending: 'attending').sum(:number_of_seats)
         end
       end
 
       field "Total Not Attending" do
         pretty_value do
-          bindings[:object].guests.where(is_attending: 'not_attending').count
+          bindings[:object].guests.where(is_attending: 'not_attending').sum(:number_of_seats)
         end
       end
 
